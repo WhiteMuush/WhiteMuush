@@ -1,1 +1,1 @@
-![Green and Beige Modern Interior Design Portfolio Presentation (2)](https://github.com/user-attachments/assets/65f9a2c6-1d78-4868-b141-10c6d78ade3d)
+![Spotify BANNER png](https://github.com/user-attachments/assets/59c9b88d-7f6f-423e-9837-2e64b5e0ce95)
