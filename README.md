@@ -1,1 +1,1 @@
-![Green and Beige Modern Interior Design Portfolio Presentation (1)](https://github.com/user-attachments/assets/9739f0a0-398b-498f-8f2f-b7a64f6ccbb5)
+![Green and Beige Modern Interior Design Portfolio Presentation (2)](https://github.com/user-attachments/assets/65f9a2c6-1d78-4868-b141-10c6d78ade3d)
