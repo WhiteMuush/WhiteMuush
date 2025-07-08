@@ -1,1 +1,1 @@
-![Spotify BANNER png](https://github.com/user-attachments/assets/59c9b88d-7f6f-423e-9837-2e64b5e0ce95)
+![Pink Beige and Black Creative Portfolio Animated Presentation](https://github.com/user-attachments/assets/94885846-f56e-42d1-aaeb-275080783faf)
