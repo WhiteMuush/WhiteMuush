@@ -1,6 +1,7 @@
 ## DevOps Student
 
-![READMEgif](https://github.com/user-attachments/assets/babc7d40-799a-426f-af2e-0a4911153459)
+![README](https://github.com/user-attachments/assets/cbf51ce1-52d3-432c-9374-bcac66f483c4)
+
 
 
 # Scripts Lover ❤️
