@@ -1,6 +1,7 @@
 ## DevOps Student
 
-![Pink Beige and Black Creative Portfolio Animated Presentation](https://github.com/user-attachments/assets/e78a757e-5e28-439b-90bd-871219dfe4d0)
+![READMEgif](https://github.com/user-attachments/assets/babc7d40-799a-426f-af2e-0a4911153459)
+
 
 # Scripts Lover ❤️
 
