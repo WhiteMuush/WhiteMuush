@@ -1,4 +1,3 @@
-## DevOps Student
 
 ![README](https://github.com/user-attachments/assets/e7fd99c8-a861-44ab-bef7-70ac1aee7869)
 
