@@ -1,9 +1,14 @@
-![README](https://github.com/user-attachments/assets/b94fb164-f88f-406f-b1fa-f92c8d01bdae)
+![preview](https://github.com/user-attachments/assets/b94fb164-f88f-406f-b1fa-f92c8d01bdae)
 
-# Scripts & Toolkit ❤️
-### Shell & PowerShell  
-You'll find various small scripts and toolkits in this repository that might come in handy !
+# Scripts & Toolkit
 
-### Portfolio
-- [Portolio CLI](https://github.com/WhiteMuush/PortfolioCLI)
-- [Portfolio WEB](https://portfolio-melvinpetit.vercel.app/)
+Small Shell & PowerShell scripts that might come in handy.  
+Clone, adapt, use.
+100% for you .
+
+---
+
+## Portfolio
+
+[Portfolio CLI](https://github.com/WhiteMuush/PortfolioCLI) Terminal-based
+[Portfolio WEB](https://portfolio-melvinpetit.vercel.app/) Browser version 
