@@ -2,6 +2,8 @@
 
 # Scripts & Toolkit ❤️
 ### Shell & PowerShell  
-You'll find various small scripts and toolkits in this repository that might come in handy ! 
+You'll find various small scripts and toolkits in this repository that might come in handy !
 
-
+### Portfolio
+- [Portolio CLI](https://github.com/WhiteMuush/PortfolioCLI)
+- [Portfolio WEB](https://portfolio-melvinpetit.vercel.app/)
