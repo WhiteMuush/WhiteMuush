@@ -1,25 +1,24 @@
-<!-- Banner  -->
+<!-- Banner -->
 <a href="https://github.com/Glauedson">
-  <img src="./assets/banner.jpg" alt="Imagem de capa"  style="width:100%; height:auto"/>
+  <img src="./assets/banner.jpg" alt="Banner" width="100%" />
 </a>
 
+<br/>
 
-<img src="./assets/HeadColor1.png" width=300 align="left">
-<div align="center">
-
-</div>
-
-<div align="justify" style="padding-top: 40px;">
+<!-- Avatar + Intro (avatar floats left, text wraps right - responsive via % width) -->
+<img src="./assets/HeadColor1.png" width="30%" align="left" alt="Avatar" />
 
 I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`, specializing in Azure with a strong interest in information security. I build custom toolkits that prioritize automation, usability, and secure practices.
 
-With hands-on experience in cloud infrastructure, security automation, and DevOps methodologies, I'm passionate about designing robust, scalable solutions that protect organizations from security threats. My expertise spans infrastructure-as-code, containerization, CI/CD pipelines, and Azure security frameworks.
+I have a keen eye for **elegant CLI design** and **user experience**, crafting tools that are not only powerful but also intuitive and visually appealing. Every toolkit I develop balances functionality with aesthetics, ensuring that security automation and DevOps tooling can be both effective and enjoyable to use.
 
-I'm committed to continuous learning and staying ahead of emerging security challenges. Through my projects and contributions, I aim to help teams implement security best practices without compromising efficiency and agility.
+I'm committed to continuous learning and staying ahead of emerging security challenges. Through my projects and contributions, I aim to help teams implement security best practices without compromising efficiency, agility, or user experience.
 
-</div>
-</br>
+<br clear="all" />
 
+<br/>
+
+<!-- Social badges (horizontal row, wraps naturally on small screens) -->
 <p align="center">
   <a href="https://www.linkedin.com/in/melvin-petit/">
     <img src="https://img.shields.io/badge/LinkedIn-FF6200?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
