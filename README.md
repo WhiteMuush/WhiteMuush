@@ -2,11 +2,14 @@
 <a href="https://github.com/Glauedson">
   <img src="./assets/banner.jpg" alt="Banner" width="100%" />
 </a>
+<sub><i>Drawing made by my friend <a href="https://www.instagram.com/atndesign/">@atndesign</a></i></sub>
 
 <br/>
 
 <!-- Avatar + Intro (avatar floats left, text wraps right - responsive via % width) -->
 <img src="./assets/HeadColor1.png" width="30%" align="left" alt="Avatar" />
+
+<br/>
 
 I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`, specializing in Azure with a strong interest in information security. I build custom toolkits that prioritize automation, usability, and secure practices.
 
