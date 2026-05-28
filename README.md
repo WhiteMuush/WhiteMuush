@@ -6,10 +6,15 @@
 
 <br/>
 
-<!-- Avatar + Intro (avatar floats left, text wraps right - responsive via % width) -->
-<img src="./assets/HeadColor1.png" width="30%" align="left" alt="Avatar" />
+<!-- Avatar + Intro (two-column table keeps text locked to the right of the avatar) -->
+<table>
+<tr>
+<td width="30%" valign="top">
 
-<br/>
+<img src="./assets/HeadColor1.png" width="100%" alt="Avatar" />
+
+</td>
+<td width="70%" valign="top">
 
 I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`, specializing in Azure with a strong interest in information security. I build custom toolkits that prioritize automation, usability, and secure practices.
 
@@ -17,7 +22,9 @@ I have a keen eye for **elegant CLI design** and **user experience**, crafting t
 
 I'm committed to continuous learning and staying ahead of emerging security challenges. Through my projects and contributions, I aim to help teams implement security best practices without compromising efficiency, agility, or user experience.
 
-<br clear="all" />
+</td>
+</tr>
+</table>
 
 <br/>
 
