@@ -23,7 +23,7 @@ I'm committed to continuous learning and staying ahead of emerging security chal
   &nbsp;
   <a href="mailto:melvin.petit31@gmail.com"><img src="https://img.shields.io/badge/Gmail-FF6200?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" /></a>
   &nbsp;
-  <a href="https://portfolio-melvinpetit.vercel.app/"><img src="https://img.shields.io/badge/Portfolio_Web-FF6200?style=for-the-badge&logo=icloud&logoColor=white" alt="Portfolio Web" /></a>
+  <a href="https://melvinpetit.com/"><img src="https://img.shields.io/badge/Portfolio_Web-FF6200?style=for-the-badge&logo=icloud&logoColor=white" alt="Portfolio Web" /></a>
   &nbsp;
   <a href="https://github.com/WhiteMuush/PortfolioCLI"><img src="https://img.shields.io/badge/Portfolio_CLI-FF6200?style=for-the-badge&logo=gnubash&logoColor=white" alt="Portfolio CLI" /></a>
 </p>
