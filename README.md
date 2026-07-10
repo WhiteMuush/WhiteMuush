@@ -1,5 +1,5 @@
 <!-- Banner -->
-<a href="https://github.com/Glauedson"><img src="./assets/banner.jpg" alt="Banner" width="100%" /></a>
+<img src="./assets/banner.jpg" alt="Banner" width="100%" /></a>
 <sub><i>Drawing made by my friend <a href="https://www.instagram.com/atndesign/">@atndesign</a></i></sub>
 
 <br/>
