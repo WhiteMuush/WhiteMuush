@@ -7,7 +7,7 @@
 <!-- Tech stack icons -->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,azure,githubactions,prometheus,grafana,go,bash,python,linux,git&perline=13" alt="Tech stack" />
+    <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,azure,githubactions,prometheus,grafana,bash,python,linux&perline=11" alt="Tech stack" />
   </a>
 </p>
 
