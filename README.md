@@ -4,6 +4,15 @@
 
 <br/>
 
+<!-- Tech stack icons -->
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,azure,githubactions,go,bash,powershell,python,linux,git&perline=12" alt="Tech stack" />
+  </a>
+</p>
+
+<br/>
+
 <!-- Avatar + Intro (avatar floats left, text wraps right - responsive via % width) -->
 <img src="./assets/HeadColor1.png" width="30%" align="left" alt="Avatar" />
 
