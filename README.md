@@ -1,5 +1,5 @@
-<!-- Banner -->
-<img src="./assets/banner.jpg" alt="Banner" width="100%" /></a>
+l<!-- Banner -->
+<img src="./assets/banner.png" alt="Banner" width="100%" /></a>
 
 <br/>
 
