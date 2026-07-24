@@ -1,4 +1,4 @@
-l<!-- Banner -->
+<!-- Banner -->
 <img src="./assets/banner.png" alt="Banner" width="100%" /></a>
 
 <br/>
