@@ -6,7 +6,7 @@
 <!-- Tech stack icons -->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,azure,githubactions,gitlab,bash,python,linux&perline=11" alt="Tech stack" />
+    <img src="https://skillicons.dev/icons?i=docker,kubernetes,terraform,ansible,azure,githubactions,gitlab,bash,python,linux,figma&perline=11" alt="Tech stack" />
   </a>
   &nbsp;
   <img src="https://cdn.simpleicons.org/claude/FF6200" height="40" alt="Claude" />
