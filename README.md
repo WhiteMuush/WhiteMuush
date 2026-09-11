@@ -36,4 +36,6 @@ I'm committed to continuous learning and staying ahead of emerging security chal
   <a href="https://melvinpetit.com/"><img src="https://img.shields.io/badge/Portfolio_Web-FF6200?style=for-the-badge&logo=icloud&logoColor=white" alt="Portfolio Web" /></a>
   &nbsp;
   <a href="https://github.com/WhiteMuush/PortfolioCLI"><img src="https://img.shields.io/badge/Portfolio_CLI-FF6200?style=for-the-badge&logo=gnubash&logoColor=white" alt="Portfolio CLI" /></a>
+  &nbsp;
+  <a href="https://github.com/Melvin-Simplon"><img src="https://img.shields.io/badge/School_Projects-FF6200?style=for-the-badge&logo=github&logoColor=white" alt="School Projects" /></a>
 </p>
