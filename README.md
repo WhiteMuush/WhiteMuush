@@ -23,9 +23,9 @@
 
 I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`.
 
-**[SecOps](https://github.com/stars/WhiteMuush/lists/secops).** I design themed command-line toolkits that turn hours of auditing, hardening or testing into a few guided, intuitive steps.
+**SecOps.** I design themed command-line toolkits that turn hours of auditing, hardening or testing into a few guided, intuitive steps.
 
-**[DevOps](https://github.com/Melvin-Simplon).** I deploy complete Azure platforms: infrastructure as code, Kubernetes, automated pipelines and proactive monitoring.
+**DevOps.** I deploy complete Azure platforms: infrastructure as code, Kubernetes, automated pipelines and proactive monitoring.
 
 **Where both meet.** I'm committed to continuous learning and staying ahead of emerging security challenges. Through my projects and contributions, I aim to help teams implement security best practices without compromising efficiency, agility, or user experience.
 
@@ -39,9 +39,9 @@ I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`.
   &nbsp;
   <a href="mailto:melvin.petit31@gmail.com"><img src="https://img.shields.io/badge/Gmail-FF6200?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" /></a>
   &nbsp;
-  <a href="https://melvinpetit.com/"><img src="https://img.shields.io/badge/Portfolio_Web-FF6200?style=for-the-badge&logo=icloud&logoColor=white" alt="Portfolio Web" /></a>
+  <a href="https://melvinpetit.com/"><img src="https://img.shields.io/badge/Portfolio-FF6200?style=for-the-badge&logo=icloud&logoColor=white" alt="Portfolio" /></a>
   &nbsp;
-  <a href="https://github.com/WhiteMuush/PortfolioCLI"><img src="https://img.shields.io/badge/Portfolio_CLI-FF6200?style=for-the-badge&logo=gnubash&logoColor=white" alt="Portfolio CLI" /></a>
+  <a href="https://github.com/stars/WhiteMuush/lists/secops"><img src="https://img.shields.io/badge/SecOps_Toolkits-FF6200?style=for-the-badge&logo=github&logoColor=white" alt="SecOps Toolkits" /></a>
   &nbsp;
   <a href="https://github.com/Melvin-Simplon"><img src="https://img.shields.io/badge/DevOps_Projects-FF6200?style=for-the-badge&logo=github&logoColor=white" alt="DevOps Projects" /></a>
 </p>
