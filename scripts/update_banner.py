@@ -10,7 +10,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
-TIMEZONE = ZoneInfo("Europe/Paris")
+TIMEZONE = "Europe/Paris"
+EVENTS_FILE = "events.toml"
 DEFAULT_BANNER = "default"
 SEASONS = {
     12: "winter", 1: "winter", 2: "winter",
@@ -20,7 +21,7 @@ SEASONS = {
 }
 # Names end up in file paths and in the README, so keep them to a safe charset.
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
-MONTH_DAY = re.compile(r"(\d{2})-(\d{2})")
+MONTH_DAY = re.compile(r"([0-9]{2})-([0-9]{2})")
 BANNER_SRC = re.compile(r'src="\./assets/banners/[a-z0-9-]+\.png"')
 
 
@@ -73,10 +74,16 @@ def pick_banner(day: date, events: list[Event], available: set[str]) -> str:
 
 
 def available_banners(directory: Path) -> set[str]:
-    names = {path.stem for path in directory.glob("*.png")}
-    invalid = sorted(name for name in names if not NAME.fullmatch(name))
-    if invalid:
-        raise ValueError(f"invalid banner file names in {directory}: {invalid}")
+    names = set()
+    for path in directory.iterdir():
+        if path.name == EVENTS_FILE or path.name.startswith("."):
+            continue
+        if path.suffix != ".png" or not NAME.fullmatch(path.stem):
+            raise ValueError(
+                f"unexpected file {path.name!r} in {directory}: banners must be"
+                " <name>.png with lowercase letters, digits and dashes"
+            )
+        names.add(path.stem)
     if DEFAULT_BANNER not in names:
         raise ValueError(f"missing fallback banner {directory / (DEFAULT_BANNER + '.png')}")
     return names
@@ -95,14 +102,18 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         "--date", type=date.fromisoformat, help="use this YYYY-MM-DD date instead of today (Europe/Paris)"
     )
     args = parser.parse_args(argv)
-    day = args.date or datetime.now(TIMEZONE).date()
+    day = args.date or datetime.now(ZoneInfo(TIMEZONE)).date()
     banners_dir = root / "assets" / "banners"
     readme_path = root / "README.md"
 
     try:
-        with (banners_dir / "events.toml").open("rb") as file:
+        with (banners_dir / EVENTS_FILE).open("rb") as file:
             events = parse_events(tomllib.load(file))
-        banner = pick_banner(day, events, available_banners(banners_dir))
+        available = available_banners(banners_dir)
+        for event in events:
+            if event.name not in available:
+                print(f"warning: event {event.name!r} has no {event.name}.png, it will never show", file=sys.stderr)
+        banner = pick_banner(day, events, available)
         readme = readme_path.read_text(encoding="utf-8")
         updated = set_banner(readme, banner)
         if updated != readme:

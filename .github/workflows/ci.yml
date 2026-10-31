@@ -9,7 +9,8 @@ permissions: {}
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Every commit on main keeps its own run; only superseded PR runs are cancelled.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
@@ -25,3 +26,7 @@ jobs:
 
       - name: Run unit tests
         run: python3 -m unittest discover -s tests -v
+
+      # Catches a broken events.toml, a badly named image or a lost README banner before merge.
+      - name: Validate banner setup
+        run: python3 scripts/update_banner.py

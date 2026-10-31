@@ -92,6 +92,7 @@ class ParseEventsTest(unittest.TestCase):
             "missing name": {"events": [{"start": "10-15", "end": "11-01"}]},
             "wrong date format": single(start="10/15"),
             "non-padded date": single(start="1-05"),
+            "non-ASCII digits": single(start="١٠-١٥"),
             "impossible day": single(start="02-30"),
             "missing end": {"events": [{"name": "spooky", "start": "10-15"}]},
             "events not a list": {"events": "halloween"},
@@ -141,10 +142,17 @@ class AvailableBannersTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             available_banners(self.directory)
 
-    def test_rejects_invalid_image_name(self):
-        self.add_images("default.png", "Winter.png")
-        with self.assertRaises(ValueError):
-            available_banners(self.directory)
+    def test_rejects_unexpected_files(self):
+        for name in ("Winter.png", "winter.PNG", "winter.jpg", "winter"):
+            with self.subTest(name=name):
+                self.add_images("default.png", name)
+                with self.assertRaises(ValueError):
+                    available_banners(self.directory)
+                (self.directory / name).unlink()
+
+    def test_ignores_hidden_files(self):
+        self.add_images("default.png", ".DS_Store")
+        self.assertEqual(available_banners(self.directory), {"default"})
 
 
 class MainTest(unittest.TestCase):
@@ -177,6 +185,13 @@ class MainTest(unittest.TestCase):
         code, out, _ = self.run_main("--date", "2026-11-02")
         self.assertEqual((code, out), (0, "default\n"))
         self.assertEqual(self.readme.read_text(), README)
+
+    def test_warns_about_event_without_image(self):
+        with (self.banners / "events.toml").open("a") as file:
+            file.write('\n[[events]]\nname = "christmas"\nstart = "12-01"\nend = "12-26"\n')
+        code, out, err = self.run_main("--date", "2026-12-10")
+        self.assertEqual((code, out), (0, "default\n"))
+        self.assertIn("warning: event 'christmas' has no christmas.png", err)
 
     def test_reports_errors_without_touching_readme(self):
         (self.banners / "events.toml").write_text("events = [broken")
