@@ -1,0 +1,54 @@
+name: Set banner
+
+# Shared by the "Bannière ..." workflows, which only pass the banner name.
+on:
+  workflow_call:
+    inputs:
+      banner:
+        description: Name of the image in assets/banners, without .png
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  set-banner:
+    name: set banner
+    # The deploy key environment only serves main; skip cleanly when started from another branch.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: seasonal-banner
+    permissions: {}
+    concurrency:
+      group: set-banner
+      cancel-in-progress: false
+    steps:
+      # The deploy key is the only actor allowed to push past the main ruleset.
+      # It lives in a temp file for this single step and is removed on exit.
+      - name: Commit and push the banner
+        env:
+          BANNER: ${{ inputs.banner }}
+          DEPLOY_KEY: ${{ secrets.BANNER_DEPLOY_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          key="${RUNNER_TEMP}/deploy_key"
+          known_hosts="${RUNNER_TEMP}/known_hosts"
+          trap 'rm -f "${key}"' EXIT
+          (umask 077 && printf '%s\n' "${DEPLOY_KEY}" > "${key}")
+          # GitHub's SSH host keys come from its API over HTTPS, so the SSH server is verified.
+          gh api meta --jq '.ssh_keys[] | "github.com " + .' > "${known_hosts}"
+          export GIT_SSH_COMMAND="ssh -i ${key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=${known_hosts}"
+
+          git clone --quiet --depth 1 --branch main "git@github.com:${GITHUB_REPOSITORY}.git" repo
+          cd repo
+          python3 scripts/set_banner.py "${BANNER}"
+          if git diff --quiet -- README.md; then
+            echo "README already shows ${BANNER}, nothing to push"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "chore(banner): switch to ${BANNER}" -- README.md
+          git push --quiet origin HEAD:main
+          echo "Banner switched to \`${BANNER}\`" >> "$GITHUB_STEP_SUMMARY"
