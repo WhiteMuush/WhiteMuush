@@ -1,5 +1,5 @@
 <!-- Banner -->
-<img src="./assets/banners/christmas.png" alt="Banner" width="100%" />
+<img src="./assets/banners/halloween.png" alt="Banner" width="100%" />
 
 <br/>
 
