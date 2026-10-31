@@ -8,6 +8,11 @@ on:
         description: Name of the image in assets/banners, without .png
         required: true
         type: string
+    secrets:
+      # Callers must name it even though its value comes from the seasonal-banner
+      # environment below; otherwise it silently resolves to an empty string.
+      BANNER_DEPLOY_KEY:
+        required: true
 
 permissions: {}
 
@@ -34,6 +39,10 @@ jobs:
         run: |
           key="${RUNNER_TEMP}/deploy_key"
           known_hosts="${RUNNER_TEMP}/known_hosts"
+          if [ -z "${DEPLOY_KEY}" ]; then
+            echo "::error::BANNER_DEPLOY_KEY is empty: check the seasonal-banner environment secret and the caller's secrets mapping"
+            exit 1
+          fi
           trap 'rm -f "${key}"' EXIT
           (umask 077 && printf '%s\n' "${DEPLOY_KEY}" > "${key}")
           # GitHub's SSH host keys come from its API over HTTPS, so the SSH server is verified.

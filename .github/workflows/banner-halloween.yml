@@ -10,3 +10,5 @@ jobs:
     uses: $/.github/workflows/set-banner.yml
     with:
       banner: halloween
+    secrets:
+      BANNER_DEPLOY_KEY: ${{ secrets.BANNER_DEPLOY_KEY }}
