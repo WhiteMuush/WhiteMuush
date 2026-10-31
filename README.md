@@ -5,13 +5,9 @@
 
 <!-- Tech stack icons, ordered left to right: foundations, cloud, IaC, containers, CI, orchestration, GitOps, observability, design, AI -->
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=linux,azure,terraform,ansible,docker,githubactions,gitlab,kubernetes&perline=8" alt="Tech stack" />
-  </a>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=linux,azure,terraform,ansible,docker,githubactions,gitlab,kubernetes&perline=8" alt="Tech stack" /></a>
   &nbsp;<img src="./assets/argocd.svg" height="48" alt="ArgoCD" />&nbsp;
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=prometheus,grafana,figma&perline=3" alt="Observability and design" />
-  </a>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=prometheus,grafana,figma&perline=3" alt="Observability and design" /></a>
   &nbsp;
   <img src="https://cdn.simpleicons.org/claude/FF6200" height="40" alt="Claude" />
 </p>
