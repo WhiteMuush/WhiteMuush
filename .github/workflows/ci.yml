@@ -17,12 +17,16 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      contents: read
+    permissions: {}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
+      # Plain git instead of actions/checkout: no third-party code and nothing to keep up to date.
+      # The repo is public, so the fetch needs no credentials. For a PR, GITHUB_SHA is the merge commit.
+      - name: Fetch the commit under test
+        run: |
+          git -c init.defaultBranch=main init --quiet .
+          git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          git fetch --quiet --depth 1 --no-tags origin "${GITHUB_SHA}"
+          git checkout --quiet --detach FETCH_HEAD
 
       - name: Run unit tests
         run: python3 -m unittest discover -s tests -v
