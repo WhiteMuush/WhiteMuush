@@ -1,9 +1,0 @@
-# Event banners, shown instead of the season banner during their dates.
-# Each event needs an image named assets/banners/<name>.png (lowercase, digits, dashes).
-# Dates are MM-DD and both inclusive. An event may span New Year (start after end).
-# When events overlap, the first one listed wins.
-
-[[events]]
-name = "halloween"
-start = "10-15"
-end = "11-01"

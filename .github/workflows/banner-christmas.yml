@@ -1,0 +1,12 @@
+name: Bannière Noël
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  set-banner:
+    uses: $/.github/workflows/set-banner.yml
+    with:
+      banner: christmas
