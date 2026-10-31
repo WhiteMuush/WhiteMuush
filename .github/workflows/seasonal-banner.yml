@@ -1,0 +1,76 @@
+name: Seasonal banner
+
+on:
+  schedule:
+    # 00:17 UTC is already the new day in Europe/Paris; an odd minute dodges the top-of-hour queue.
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: seasonal-banner
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.banner.outputs.changed }}
+      day: ${{ steps.banner.outputs.day }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Select today's banner
+        id: banner
+        run: |
+          # Fix the day once so both jobs agree, whenever update ends up running.
+          day="$(TZ=Europe/Paris date +%F)"
+          banner="$(python3 scripts/update_banner.py --date "${day}")"
+          if git diff --quiet -- README.md; then changed=false; else changed=true; fi
+          {
+            echo "day=${day}"
+            echo "changed=${changed}"
+          } >> "$GITHUB_OUTPUT"
+          echo "Banner for ${day}: \`${banner}\` (README changed: ${changed})" >> "$GITHUB_STEP_SUMMARY"
+
+  # Only this job sees the deploy key, and only when the README actually has to change.
+  update:
+    name: update
+    needs: check
+    if: needs.check.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # The environment only lets main read the deploy key.
+    environment: seasonal-banner
+    permissions:
+      contents: read
+    env:
+      DAY: ${{ needs.check.outputs.day }}
+    steps:
+      # The deploy key is the only actor allowed to push past the main ruleset,
+      # so its credentials must persist until the push step.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Latest main rather than the triggering commit, so the push stays a fast-forward.
+          ref: main
+          ssh-key: ${{ secrets.BANNER_DEPLOY_KEY }}
+          persist-credentials: true # zizmor: ignore[artipacked] no artifact is uploaded
+
+      - name: Commit and push the new banner
+        run: |
+          banner="$(python3 scripts/update_banner.py --date "${DAY}")"
+          if git diff --quiet -- README.md; then
+            echo "README already up to date, nothing to push"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "chore(banner): switch to ${banner}" -- README.md
+          git push origin HEAD:main
