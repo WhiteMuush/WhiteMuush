@@ -1,3 +1,10 @@
+<!--
+  Hey, you're reading the source of my profile 👋
+  Feel free to reuse it as a template for your own!
+  The only thing I ask in return: follow me on GitHub (https://github.com/WhiteMuush)
+  and keep a link back to this profile. Thanks, and have fun!
+-->
+
 <!-- Banner -->
 <img src="./assets/banners/halloween.png" alt="Banner" width="100%" />
 
@@ -40,13 +47,4 @@ I'm a `Cloud` and `DevSecOps` student at `Simplon Toulouse`.
   <a href="https://github.com/stars/WhiteMuush/lists/secops"><img src="https://img.shields.io/badge/SecOps_Toolkits-FF6200?style=for-the-badge&logo=github&logoColor=white" alt="SecOps Toolkits" /></a>
   &nbsp;
   <a href="https://github.com/Melvin-Simplon"><img src="https://img.shields.io/badge/DevOps_Projects-FF6200?style=for-the-badge&logo=github&logoColor=white" alt="DevOps Projects" /></a>
-</p>
-
-<br/>
-
-<!-- Reuse notice: copying is welcome, a follow is the only ask -->
-<p align="center">
-  <a href="https://github.com/WhiteMuush"><img src="https://img.shields.io/github/followers/WhiteMuush?label=Follow&style=for-the-badge&logo=github&logoColor=white&color=FF6200" alt="Follow WhiteMuush on GitHub" /></a>
-  <br/>
-  <sub>Like this profile? Feel free to reuse it as a template: just follow me and keep a link back here.</sub>
 </p>
